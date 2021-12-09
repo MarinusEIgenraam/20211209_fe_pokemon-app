@@ -1,9 +1,9 @@
-import React, {useContext} from 'react';
+import React, {createContext} from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const LanguageContext = useContext(null);
+export const LanguageContext = createContext(null);
 
 ReactDOM.render(
     <React.StrictMode>
