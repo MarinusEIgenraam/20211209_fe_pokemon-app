@@ -6,6 +6,8 @@
 import './PageHero.scss'
 
 
+
+
 ////////////////////
 //// External
 
@@ -13,10 +15,8 @@ export default function PageHero() {
 
     return (
         <>
-            <div className="hero-container">
-<div className="hero-image">
+            <div>
 
-</div>
             </div>
         </>
     )

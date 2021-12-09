@@ -7,6 +7,7 @@ import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 //// Environmental
 import './App.css';
 import PageHero from "./components/layout/PageHero/PageHero";
+import PokemonDeck from "./components/Pages/PokemonDeck/PokemonDeck";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
           <PageHero/>
 
           <Routes>
-
+<Route path="/" element={<PokemonDeck/>}/>
           </Routes>
 
       </Router>
