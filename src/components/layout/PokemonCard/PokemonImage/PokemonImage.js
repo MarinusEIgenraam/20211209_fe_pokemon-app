@@ -18,7 +18,7 @@ export default function PokemonImage({ url}) {
     return (
         <>
             <div className="image-container">
-                <img src={url}/>
+                <img className="pokemon-image" src={url}/>
 
             </div>
         </>

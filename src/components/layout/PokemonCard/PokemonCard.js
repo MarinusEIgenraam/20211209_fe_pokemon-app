@@ -5,8 +5,10 @@ import React, {useState, useEffect} from "react";
 ////////////////////
 //// Environmental
 import './PokemonCard.scss'
-import PokemonImage from "../../shared/PokemonImage/PokemonImage";
+import PokemonImage from "./PokemonImage/PokemonImage";
 import axios from "axios";
+import Abilities from "./Abilities/Abilities";
+import Weight from "./Weight/Weight";
 
 ////////////////////
 //// External
@@ -47,14 +49,16 @@ export default function PokemonCard({name, url}) {
 
             <div className="pokemon-border">
                 <div className="pokemon-card">
-                    // naam,
+                    {/*// naam,*/}
                     <h1 className="pokemon-title">{name}</h1>
-                    // een afbeelding,
+                    {/*// een afbeelding,*/}
                     <PokemonImage url={image}/>
+                    {/*// lijst van abilities,*/}
+                    <Abilities abilities={abilities}/>
+                    <Weight weight={weight} />
 
-                    // lijst van abilities,
-                    // gewicht, en de
-                    // hoeveelheid moves.
+                    {/*// gewicht, en de*/}
+                    {/*// hoeveelheid moves.*/}
 
                 </div>
             </div>

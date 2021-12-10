@@ -1,0 +1,18 @@
+li {
+  list-style: none;
+  border-top: solid 1px var(--pokemon-dark-yelow);
+  padding: 2px;
+}
+
+li:last-child {
+  border-bottom: solid 1px var(--pokemon-dark-yelow);
+  margin-bottom: 5px;
+}
+
+p {
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+
+

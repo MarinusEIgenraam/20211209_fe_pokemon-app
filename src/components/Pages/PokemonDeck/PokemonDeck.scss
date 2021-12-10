@@ -1,6 +1,6 @@
 .poke-deck {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-template-areas:
   "top";
 }
@@ -23,10 +23,18 @@
   background-color: var(--pokemon-card);
   border-radius: 5px;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-items: end;
+  justify-content: space-between;
 
 }
 
 .pokemon-title {
   font-size: 1rem;
   text-transform: capitalize;
+}
+
+sl li {
+  text-decoration: none;
 }
