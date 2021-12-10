@@ -2,12 +2,16 @@
   height: 20vh;
   position: relative;
   flex-direction: column;
+  display: flex;
 }
 
 .hero-image {
   height: 20vh;
-  width: 100%;
+  width: 80vw;
+  align-items: center;
+  align-self: center;
+  background-size: contain;
   background-image: url('../../../assets/International_Pokémon_logo.svg');
-  background-position: 50% 50%;
+  background-position: center;
   background-repeat: no-repeat;
 }

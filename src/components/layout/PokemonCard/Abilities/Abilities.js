@@ -11,7 +11,7 @@ import Ability from "./Ability/Ability";
 
 export default function Abilities({abilities}) {
 
-    console.log(abilities)
+    // console.log(abilities)
     return (
         <>
             <sl>

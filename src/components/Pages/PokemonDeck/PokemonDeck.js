@@ -1,12 +1,15 @@
 ////////////////////
 //// Build
-import {useState, useEffect} from "react";
+import React, {useState, useEffect} from "react";
 import axios from 'axios';
 
 ////////////////////
 //// Environmental
 import './PokemonDeck.scss'
 import PokemonCard from "../../layout/PokemonCard/PokemonCard";
+import Navigation from "../../layout/Navigation/Navigation";
+import Button from "../../shared/Button/Button";
+
 const {REACT_APP_API_URL} = process.env;
 
 
@@ -19,8 +22,6 @@ export default function PokemonDeck() {
     const [pageOffset, setPageOffset] = useState(20)
 
 
-
-
     const API_URL = `${REACT_APP_API_URL}pokemon/?limit=${pageLimit}&offset=${pageOffset}`;
 
     useEffect(() => {
@@ -31,7 +32,7 @@ export default function PokemonDeck() {
                 const result = await axios.get(API_URL, {cancelToken: source.token,});
                 setLoadedPokemon(result.data.results)
                 // console.log(result.data.results);
-                // console.log(loadedPokemon)
+                console.log(result)
 
             } catch (e) {
                 console.error(e);
@@ -44,20 +45,40 @@ export default function PokemonDeck() {
             source.cancel();
         };
 
-    }, []);
+    }, [pageOffset]);
 
+    function getNext() {
+        setPageOffset(pageOffset + 20)
+        console.log(pageOffset)
+    }
+    function getPrevious() {
+        if (pageOffset !== 0) {
+
+            setPageOffset(pageOffset - 20);
+            console.log(pageOffset)
+        }
+    }
 
     return (
         <>
-            <segment className="wrapper poke-deck">
 
-                {loadedPokemon.map((pokemon) => {
+            <div className="poke-container">
 
-                    return (
-                        <PokemonCard key={pokemon.name} name={pokemon.name} url={pokemon.url}/>
-                    )
-                })}
-            </segment>
+                <Navigation>
+                    {pageOffset>0 &&<Button title="previous" onClick={getPrevious}/>}
+
+                    <Button title="next" onClick={getNext}/>
+                </Navigation>
+                <segment className="wrapper poke-deck">
+
+                    {loadedPokemon.map((pokemon) => {
+
+                        return (
+                            <PokemonCard key={pokemon.name} name={pokemon.name} url={pokemon.url}/>
+                        )
+                    })}
+                </segment>
+            </div>
 
         </>
     );

@@ -5,6 +5,8 @@
     padding: 0;
     box-sizing: border-box;
     border: 0;
+    font-family: var(--font-basic);
+
 }
 
 :root {
@@ -26,7 +28,6 @@
 }
 
 body {
-    font-family: var(--font-basic);
     background-color: var(--pokemon-yelow);
 }
 
@@ -48,4 +49,8 @@ h1 {
 .wrapper {
     height: 100vh;
     position: relative;
+}
+
+.title {
+    font-weight: 700;
 }

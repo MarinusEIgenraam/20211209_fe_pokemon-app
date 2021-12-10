@@ -8,10 +8,13 @@ import './Button.scss'
 ////////////////////
 //// External
 
-export default function Button() {
+export default function Button({title, onClick}) {
 
     return (
         <>
+            <button onClick={onClick}>
+                {title}
+            </button>
         </>
     )
 }

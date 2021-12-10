@@ -1,0 +1,15 @@
+button {
+  color: white;
+  height: 35px;
+  min-width: 100px;
+  background: var(--pokemon-blue);
+  outline: solid 1.5px var(--pokemon-gold);
+  box-shadow: 3px 3px 3px var(--pokemon-dark-yelow);
+  outline-offset: -3px;
+  border-radius: 5px;
+  padding: 7px;
+  margin: 5px;
+  font-size: 0.9rem;
+  font-weight: 400;
+  //color: var(--pokemon-gold);
+}

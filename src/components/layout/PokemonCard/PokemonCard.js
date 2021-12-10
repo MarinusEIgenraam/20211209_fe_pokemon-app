@@ -28,8 +28,9 @@ export default function PokemonCard({name, url}) {
                 const result = await axios.get(url, {cancelToken: source.token})
                 setImage(result.data.sprites.front_default);
                 setAbilities(result.data.abilities);
-                setMoves(result.data.moves);
+                setMoves(result.data.moves.length);
                 setWeight(result.data.weight)
+                console.log(result.data)
             } catch (e) {
                 console.error(e)
             }
@@ -50,12 +51,17 @@ export default function PokemonCard({name, url}) {
             <div className="pokemon-border">
                 <div className="pokemon-card">
                     {/*// naam,*/}
-                    <h1 className="pokemon-title">{name}</h1>
+                    <h3 className="pokemon-title">{name}</h3>
                     {/*// een afbeelding,*/}
                     <PokemonImage url={image}/>
                     {/*// lijst van abilities,*/}
                     <Abilities abilities={abilities}/>
-                    <Weight weight={weight} />
+                    <div className="details">
+                        <div className="move-count">
+                            <span className="pokemon-title title">{name}</span> can make <span className="title">{moves}</span> moves
+                        </div>
+                        <Weight weight={weight} />
+                    </div>
 
                     {/*// gewicht, en de*/}
                     {/*// hoeveelheid moves.*/}
