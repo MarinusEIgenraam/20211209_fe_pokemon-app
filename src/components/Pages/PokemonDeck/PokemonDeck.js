@@ -7,6 +7,8 @@ import axios from 'axios';
 //// Environmental
 import './PokemonDeck.scss'
 import PokemonCard from "../../layout/PokemonCard/PokemonCard";
+const {REACT_APP_API_URL} = process.env;
+
 
 ////////////////////
 //// External
@@ -17,24 +19,26 @@ export default function PokemonDeck() {
     const [pageOffset, setPageOffset] = useState(20)
 
 
-    const API_URL = `https://pokeapi.co/api/v2/pokemon/?limit=${pageLimit}&offset=${pageOffset}`;
+
+
+    const API_URL = `${REACT_APP_API_URL}pokemon/?limit=${pageLimit}&offset=${pageOffset}`;
 
     useEffect(() => {
         const source = axios.CancelToken.source();
 
-        async function getPokemon() {
+        async function gotToCatchThem() {
             try {
                 const result = await axios.get(API_URL, {cancelToken: source.token,});
                 setLoadedPokemon(result.data.results)
-                console.log(result.data.results);
-                console.log(loadedPokemon)
+                // console.log(result.data.results);
+                // console.log(loadedPokemon)
 
             } catch (e) {
                 console.error(e);
             }
         }
 
-        getPokemon()
+        gotToCatchThem()
 
         return function clearPokemon() {
             source.cancel();
@@ -50,7 +54,7 @@ export default function PokemonDeck() {
                 {loadedPokemon.map((pokemon) => {
 
                     return (
-                        <PokemonCard name={pokemon.name}/>
+                        <PokemonCard key={pokemon.name} name={pokemon.name} url={pokemon.url}/>
                     )
                 })}
             </segment>
