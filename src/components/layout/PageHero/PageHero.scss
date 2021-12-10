@@ -1,13 +1,13 @@
-
-hero-image {
-  z-index: 999;
+.hero-wrapper {
+  height: 20vh;
   position: relative;
-  width: 100%;
-  height: 100vh;
-  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: url('../../../assets/International_Pokémon_logo.svg') no-repeat center center fixed;
-  background-size: cover;
+}
+
+.hero-image {
+  height: 20vh;
+  width: 100%;
+  background-image: url('../../../assets/International_Pokémon_logo.svg');
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
 }

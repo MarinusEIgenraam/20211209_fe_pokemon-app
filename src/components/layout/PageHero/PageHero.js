@@ -15,8 +15,11 @@ export default function PageHero() {
 
     return (
         <>
-            <div>
+            <div className="hero-wrapper">
 
+                <div className="hero-image">
+
+                </div>
             </div>
         </>
     )

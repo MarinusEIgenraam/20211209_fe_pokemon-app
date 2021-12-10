@@ -1,0 +1,32 @@
+.poke-deck {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+  "top";
+}
+
+.pokemon-border {
+
+  box-shadow: 2px 2px 3px 1px var(--pokemon-dark-yelow);
+  border: solid 5px  var(--pokemon-yelow);
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.pokemon-card {
+  outline: var(--dark-text);
+  box-shadow: 0px 0px 4px 2px var(--pokemon-light-dark-yelow), inset 0px 0px 2px var(--pokemon-light-dark-yelow);
+  //border: solid 1px  var(--pokemon-light-dark-yelow);
+  padding: 5px;
+  background-clip: border-box;
+
+  background-color: var(--pokemon-card);
+  border-radius: 5px;
+  height: 100%;
+
+}
+
+.pokemon-title {
+  font-size: 1rem;
+  text-transform: capitalize;
+}

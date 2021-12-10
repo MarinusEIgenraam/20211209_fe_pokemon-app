@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,700;1,500&family=Roboto:wght@100;300;500;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+}
+
+:root {
+    --pokemon-red: #FF0000;
+    --pokemon-university-red: #CC0000;
+    --pokemon-blue: #3B4CCA;
+    --pokemon-yelow: #FFDE00;
+    --pokemon-dark-yelow: #baab45;
+    --pokemon-light-dark-yelow: #d5d1be;
+    --pokemon-gold: #B3A125;
+    --pokemon-card: #f1f1ec;
+
+    --font-basic: 'Roboto', sans-serif;
+
+    --light-text: #7c7c7c;
+    --dark-text: #3a3a3a;
+
+    --ease: all 0.3s ease 0s;
+}
+
+body {
+    font-family: var(--font-basic);
+    background-color: var(--pokemon-yelow);
+}
+
+h1,i {
+    color: var(--dark-text);
+}
+
+p,a {
+    color: var(--light-text);
+    text-decoration: none;
+}
+
+h1 {
+    font-family: var(--font-basic);
+    font-size: 2.5em;
+    font-weight: 500;
+}
+
+.wrapper {
+    height: 100vh;
+    position: relative;
+}

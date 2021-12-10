@@ -5,7 +5,7 @@ import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 
 ///////////////////////
 //// Environmental
-import './App.css';
+import './App.scss';
 import PageHero from "./components/layout/PageHero/PageHero";
 import PokemonDeck from "./components/Pages/PokemonDeck/PokemonDeck";
 
