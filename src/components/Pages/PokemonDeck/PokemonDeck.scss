@@ -1,49 +1,24 @@
-.poke-deck {
-  display: grid;
+.page-wrapper {
+  display: flex;
   flex-direction: column;
-  align-items: center;
-  grid-template-columns: 1fr 1fr 1fr;
-
+  height: 100vh;
 
 }
+
 
 .poke-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 20px;
 }
 
-.pokemon-border {
-
-  box-shadow: 2px 2px 3px 1px var(--pokemon-dark-yelow);
-  border: solid 5px  var(--pokemon-yelow);
-  border-radius: 10px;
-  margin: 5px;
-  width: 185px;
-  height: 300px;
-}
-
-.pokemon-card {
-  outline: var(--dark-text);
-  box-shadow: 0px 0px 4px 2px var(--pokemon-light-dark-yelow), inset 0px 0px 2px var(--pokemon-light-dark-yelow);
-  //border: solid 1px  var(--pokemon-light-dark-yelow);
-  padding: 10px;
-  background-clip: border-box;
-
-  background-color: var(--pokemon-card);
-  border-radius: 5px;
-  height: 100%;
-  display: flex;
+.poke-deck {
+  display: grid;
   flex-direction: column;
-  justify-items: end;
-  justify-content: space-between;
-
+  align-items: center;
 }
 
-.pokemon-title {
-  text-transform: capitalize;
-}
 
-sl li {
-  text-decoration: none;
-}

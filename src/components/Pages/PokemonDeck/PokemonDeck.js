@@ -9,6 +9,7 @@ import './PokemonDeck.scss'
 import PokemonCard from "../../layout/PokemonCard/PokemonCard";
 import Navigation from "../../layout/Navigation/Navigation";
 import Button from "../../shared/Button/Button";
+import Loader from "../../shared/Loader/Loader";
 
 const {REACT_APP_API_URL} = process.env;
 
@@ -62,14 +63,15 @@ export default function PokemonDeck() {
     return (
         <>
 
-            <div className="poke-container">
+            <div className="page-wrapper">
 
                 <Navigation>
                     {pageOffset>0 &&<Button title="previous" onClick={getPrevious}/>}
 
                     <Button title="next" onClick={getNext}/>
                 </Navigation>
-                <segment className="wrapper poke-deck">
+                <Loader/>
+                <segment className="poke-deck">
 
                     {loadedPokemon.map((pokemon) => {
 
