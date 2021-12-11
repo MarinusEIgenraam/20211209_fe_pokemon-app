@@ -19,12 +19,16 @@
     --pokemon-gold: #B3A125;
     --pokemon-card: #f1f1ec;
 
+    --pokeball-border: #383b4f;
+    --pokeball-red: #f51939;
+
     --font-basic: 'Roboto', sans-serif;
 
     --light-text: #7c7c7c;
     --dark-text: #3a3a3a;
 
     --ease: all 0.3s ease 0s;
+
 }
 
 body {
@@ -46,10 +50,6 @@ h1 {
     font-weight: 500;
 }
 
-.wrapper {
-    height: 100vh;
-    position: relative;
-}
 
 .title {
     font-weight: 700;

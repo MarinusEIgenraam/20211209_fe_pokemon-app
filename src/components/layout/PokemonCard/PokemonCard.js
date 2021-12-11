@@ -26,7 +26,7 @@ export default function PokemonCard({name, url}) {
 
             try {
                 const result = await axios.get(url, {cancelToken: source.token})
-                setImage(result.data.sprites.front_default);
+                setImage(result.data.sprites.other.dream_world.front_default);
                 setAbilities(result.data.abilities);
                 setMoves(result.data.moves.length);
                 setWeight(result.data.weight)

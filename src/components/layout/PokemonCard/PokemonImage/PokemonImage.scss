@@ -1,6 +1,13 @@
+.image-container {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .pokemon-image {
-  width:100%;
-  position: relative;
+  width:60%;
+  //position: relative;
 }
 
 //.image-container:hover .pokemon-image {

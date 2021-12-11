@@ -10,6 +10,7 @@ import PokemonCard from "../../layout/PokemonCard/PokemonCard";
 import Navigation from "../../layout/Navigation/Navigation";
 import Button from "../../shared/Button/Button";
 import Loader from "../../shared/Loader/Loader";
+import PokemonCardDeck from "../../layout/PokemonCardDeck/PokemonCardDeck";
 
 const {REACT_APP_API_URL} = process.env;
 
@@ -20,23 +21,39 @@ const {REACT_APP_API_URL} = process.env;
 export default function PokemonDeck() {
     const [loadedPokemon, setLoadedPokemon] = useState([])
     const [pageLimit, setPageLimit] = useState(20)
-    const [pageOffset, setPageOffset] = useState(20)
+    const [pageOffset, setPageOffset] = useState(0)
+    const [isLoading, setIsLoading] = useState(false)
+    const [hasError, setHasError] = useState(false);
+    const [isTimedOut,setIsTimedOut] = useState(false)
 
 
     const API_URL = `${REACT_APP_API_URL}pokemon/?limit=${pageLimit}&offset=${pageOffset}`;
 
     useEffect(() => {
         const source = axios.CancelToken.source();
+        setIsLoading(true);
+
+        const timer = setTimeout(() => {
+            console.log('This will run after 1 second!')
+            setIsTimedOut(false);
+            setIsLoading(false)
+        }, 2000);
 
         async function gotToCatchThem() {
+            setHasError(false);
+
+
+
             try {
                 const result = await axios.get(API_URL, {cancelToken: source.token,});
                 setLoadedPokemon(result.data.results)
                 // console.log(result.data.results);
                 console.log(result)
+                // setIsLoading(false)
 
             } catch (e) {
                 console.error(e);
+                setHasError(true);
             }
         }
 
@@ -44,6 +61,8 @@ export default function PokemonDeck() {
 
         return function clearPokemon() {
             source.cancel();
+            clearTimeout(timer);
+            setIsTimedOut(false)
         };
 
     }, [pageOffset]);
@@ -70,16 +89,17 @@ export default function PokemonDeck() {
 
                     <Button title="next" onClick={getNext}/>
                 </Navigation>
-                <Loader/>
-                <segment className="poke-deck">
+                {(isLoading || isTimedOut) && <Loader/>}
+                <PokemonCardDeck>
+                    <segment className="poke-deck">
+                        {loadedPokemon.map((pokemon) => {
+                            return (
+                                <PokemonCard key={pokemon.name} name={pokemon.name} url={pokemon.url}/>
+                            )
+                        })}
+                    </segment>
+                </PokemonCardDeck>
 
-                    {loadedPokemon.map((pokemon) => {
-
-                        return (
-                            <PokemonCard key={pokemon.name} name={pokemon.name} url={pokemon.url}/>
-                        )
-                    })}
-                </segment>
             </div>
 
         </>

@@ -1,11 +1,41 @@
 .pokemon-border {
+  margin-top: 0;
 
   box-shadow: 2px 2px 3px 1px var(--pokemon-dark-yelow);
   border: solid 5px  var(--pokemon-yelow);
   border-radius: 10px;
-  margin: 5px;
+  height: 350px;
+  max-width: 200px;
+
   //width: 185px;
   //height: 300px;
+}
+
+
+.pokemon-border:first-of-type {
+  margin-top: 20rem;
+}
+.pokemon-border:not(:first-of-type) {
+  margin-top: -20rem;
+}
+.pokemon-border:not(:first-child) {
+  margin-top: -20rem;
+}
+
+
+.pokemon-border:first-child {
+  margin-top: 0;
+}
+
+
+.pokemon-border:hover {
+  transform: translateY(0rem);
+}
+
+.pokemon-border:hover {
+  ~ .pokemon-border:not(:first-of-type) {
+    transform: translateY(21rem);
+  }
 }
 
 .pokemon-card {
@@ -13,15 +43,15 @@
   box-shadow: 0px 0px 4px 2px var(--pokemon-light-dark-yelow), inset 0px 0px 2px var(--pokemon-light-dark-yelow);
   //border: solid 1px  var(--pokemon-light-dark-yelow);
   padding: 10px;
+  height: 100%;
   background-clip: border-box;
-
   background-color: var(--pokemon-card);
   border-radius: 5px;
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-items: end;
   justify-content: space-between;
+  transition: 0.2s;
 
 }
 
