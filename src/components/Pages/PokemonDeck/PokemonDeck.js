@@ -90,15 +90,13 @@ export default function PokemonDeck() {
                     <Button title="next" onClick={getNext}/>
                 </Navigation>
                 {(isLoading || isTimedOut) && <Loader/>}
-                <PokemonCardDeck>
-                    <segment className="poke-deck">
-                        {loadedPokemon.map((pokemon) => {
-                            return (
-                                <PokemonCard key={pokemon.name} name={pokemon.name} url={pokemon.url}/>
-                            )
-                        })}
-                    </segment>
-                </PokemonCardDeck>
+                <segment className="poke-deck">
+                    {loadedPokemon.map((pokemon) => {
+                        return (
+                            <PokemonCard key={pokemon.name} name={pokemon.name} url={pokemon.url}/>
+                        )
+                    })}
+                </segment>
 
             </div>
 
