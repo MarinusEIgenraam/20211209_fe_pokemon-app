@@ -47,6 +47,12 @@ export default function PokemonCard({name, url}) {
 
     }, []);
 
+    function onLeaveCard() {
+        if (cardFolded === false) {
+            setCardFolded(true)
+        }
+    }
+
     return (
         <>
 

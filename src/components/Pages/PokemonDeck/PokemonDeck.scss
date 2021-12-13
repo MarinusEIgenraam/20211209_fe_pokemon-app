@@ -20,22 +20,27 @@
 
 .poke-deck {
   display: flex;
-  height: 30vh;
+  height: 50vh;
+  width: 100vh;
   flex-direction: column;
-flex-wrap: wrap;
+  break-before: column;
+  flex-wrap: wrap;
+  columns: 4;
+  column-count: 5;
+  justify-content: center;
 
 }
 
 
-@media only screen and (min-width: 600px) {
-  .poke-deck {
-    display: flex;
-    flex-direction: column;
-    //break-before: column;
-    columns: 3;
-    column-gap: 10px;
-    column-count: 4;
-    page-break-before: always;
-
-  }
-}
+//@media only screen and (min-width: 600px) {
+//  .poke-deck {
+//    display: flex;
+//    flex-direction: column;
+//    //break-before: column;
+//    //columns: 4;
+//    column-gap: 10px;
+//    //column-count: 5;
+//    page-break-before: always;
+//
+//  }
+//}
