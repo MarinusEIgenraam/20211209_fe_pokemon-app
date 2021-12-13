@@ -1,9 +1,9 @@
 .pokemon-border {
-  margin-top: -20rem;
+  //margin-top: -20rem;
   box-shadow: 2px 2px 3px 1px var(--pokemon-dark-yelow);
   border: solid 5px var(--pokemon-yelow);
   border-radius: 10px;
-  height: 350px;
+  min-height: 350px;
   width: 200px;
 
   &:first-child {
@@ -11,103 +11,81 @@
   }
 
   &:not(:first-child) {
-    margin-top: -20rem;
+    margin-top: -300px;
   }
+}
+
+.pokemon-border-unfolded {
+  margin-bottom: 310px;
 }
 
 @media only screen and (max-width: 599px) {
-  .pokemon-border:hover {
-    transform: translateY(0rem);
-  }
 
-  .pokemon-border:hover {
-    ~ .pokemon-border {
-      &:not(:first-child) {
-        transform: translateY(21rem);
-      }
-
-    }
-  }
+  //.pokemon-border:hover {
+  //  transform: translateY(0rem);
+  //}
+  //
+  //.pokemon-border:hover {
+  //  ~ .pokemon-border {
+  //    &:not(:first-child) {
+  //      transform: translateY(21rem);
+  //    }
+  //
+  //  }
+  //}
 }
 
-
-
+//
+//
 @media only screen and (min-width: 600px) {
   .pokemon-border {
-    &:nth-child(n+1):nth-child(-n+5):hover {
-      ~ .pokemon-border:nth-child(n+1):nth-child(-n+5) {
-        &:not(:first-child) {
-          transform: translateY(21rem);
-        }
-      }
-    }
-    &:nth-child(n+6):nth-child(-n+10):hover {
-      ~ .pokemon-border:nth-child(n+6):nth-child(-n+10) {
-        &:not(:first-child) {
-          transform: translateY(21rem);
-        }
-      }
-    }
-    &:nth-child(n+11):nth-child(-n+15):hover {
-      ~ .pokemon-border:nth-child(n+11):nth-child(-n+15) {
-        &:not(:first-child) {
-          transform: translateY(21rem);
-        }
-      }
-    }
-    &:nth-child(n+16):nth-child(-n+20):hover {
-      ~ .pokemon-border:nth-child(n+16):nth-child(-n+20) {
-        &:not(:first-child) {
-          transform: translateY(21rem);
-        }
-      }
+    &:nth-child(n+6) {
+      //position: relative;
+      break-before: column;
     }
   }
-
-
-
-
-
   .pokemon-border {
-    //margin-top: -20rem;
+  //margin-top: -20rem;
+
+    &:nth-child(5){
+      margin-top: 0;
+    }
+
+
+  &:nth-child(5n) {
+    //margin-top: 0;
+
     &:not(:first-child) {
       margin-top: -20rem;
     }
-    &:nth-child(5n) {
-      margin-top: 0;
+  }
+  //
+  //&:nth-child(n+6) {
+  //  grid-column: 2;
+  //}
 
-      &:not(:first-child) {
-        margin-top: -20rem;
-      }
-    }
-    &:nth-child(n+6) {
-      grid-column: 2;
-    }
+  &:nth-child(6) {
+    margin-top: 0rem;
+  }
+  //
+  //&:nth-child(n+11) {
+  //  grid-column: 3;
+  //}
 
-    &:nth-child(6) {
-      margin-top: 0rem;
-    }
+  &:nth-child(11) {
+    margin-top: 0rem;
+  }
 
-    &:nth-child(n+11) {
-      grid-column: 3;
-    }
+  //&:nth-child(n+16) {
+  //  grid-column: 4;
+  //}
 
-    &:nth-child(11) {
-      margin-top: 0rem;
-    }
-
-    &:nth-child(n+16) {
-      grid-column: 4;
-    }
-
-    &:nth-child(16) {
-      margin-top: 0rem;
-    }
+  &:nth-child(16) {
+    margin-top: 0rem;
+  }
 
   }
 }
-
-
 
 
 .pokemon-card {

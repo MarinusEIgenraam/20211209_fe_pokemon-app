@@ -3,7 +3,7 @@
   flex-direction: column;
   //justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 30vh;
   width: 100vw;
 
 }
@@ -19,16 +19,23 @@
 //}
 
 .poke-deck {
-  display: grid;
-  grid-template-columns: 1fr;
-
+  display: flex;
+  height: 30vh;
+  flex-direction: column;
+flex-wrap: wrap;
 
 }
 
 
 @media only screen and (min-width: 600px) {
   .poke-deck {
-    grid-auto-flow: column;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    display: flex;
+    flex-direction: column;
+    //break-before: column;
+    columns: 3;
+    column-gap: 10px;
+    column-count: 4;
+    page-break-before: always;
+
   }
 }

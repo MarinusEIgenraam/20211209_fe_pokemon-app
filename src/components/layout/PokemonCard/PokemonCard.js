@@ -18,8 +18,10 @@ export default function PokemonCard({name, url}) {
     const [abilities, setAbilities] = useState([])
     const [moves, setMoves] = useState([])
     const [weight, setWeight] = useState()
+    const [cardFolded, setCardFolded] = useState(true);
 
     const source = axios.CancelToken.source();
+
 
     useEffect(() => {
         async function catchPokemon() {
@@ -48,10 +50,10 @@ export default function PokemonCard({name, url}) {
     return (
         <>
 
-            <div className="pokemon-border">
+            <div className={`pokemon-border ${!cardFolded && 'pokemon-border-unfolded'}`}>
                 <div className="pokemon-card">
                     {/*// naam,*/}
-                    <h3 className="pokemon-title">{name}</h3>
+                    <h3 onClick={()=> setCardFolded(!cardFolded)} className="pokemon-title">{name}</h3>
                     {/*// een afbeelding,*/}
                     <PokemonImage url={image}/>
                     {/*// lijst van abilities,*/}

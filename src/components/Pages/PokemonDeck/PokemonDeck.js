@@ -24,7 +24,7 @@ export default function PokemonDeck() {
     const [pageOffset, setPageOffset] = useState(0)
     const [isLoading, setIsLoading] = useState(false)
     const [hasError, setHasError] = useState(false);
-    const [isTimedOut,setIsTimedOut] = useState(false)
+    const [isTimedOut, setIsTimedOut] = useState(false);
 
 
     const API_URL = `${REACT_APP_API_URL}pokemon/?limit=${pageLimit}&offset=${pageOffset}`;
@@ -78,6 +78,8 @@ export default function PokemonDeck() {
             console.log(pageOffset)
         }
     }
+
+
 
     return (
         <>
